@@ -21,7 +21,7 @@
 <br>
 
 <p align="center">
-    <img alt="E-commerce Games" src="https://i.imgur.com/d5Feu36.gif?raw=true" width="600px"/>
+    <img alt="E-commerce Games" src="https://i.imgur.com/pJP4MBX.gif" />
   </a>
 </p>
 
