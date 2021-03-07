@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -16,9 +16,8 @@ export const Title = styled(Link)`
   display: flex;
 
   svg {
-    margin-left: .3rem;
+    margin-left: 0.3rem;
   }
-
 `;
 
 export const Cart = styled(Link)`
