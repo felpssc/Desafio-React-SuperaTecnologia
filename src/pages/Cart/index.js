@@ -12,7 +12,6 @@ import {
   ProductTable,
   EmptyCartContainer,
   Total,
-  LoadingIcon,
 } from "./styles";
 import { CartContext } from "../../contexts/CartContext";
 
@@ -24,7 +23,7 @@ export function Cart() {
     handleRemoveAmount,
     getTotalPrice,
     isDiscountAvailable,
-    getTotalPriceWithDiscount
+    getTotalPriceWithDiscount,
   } = useContext(CartContext);
 
   return (
@@ -49,12 +48,12 @@ export function Cart() {
                   <td>
                     <img
                       src={require(`../../assets/images/${product.image}`)}
-                      alt={product.title}
+                      alt={product.name}
                     />
                   </td>
                   <td>
                     <strong>{product.name}</strong>
-                    <span>{product.priceFormatted}</span>
+                    <span>R$ {product.price}</span>
                   </td>
                   <td>
                     <div>
@@ -73,15 +72,20 @@ export function Cart() {
                       </button>
                     </div>
                   </td>
-                  <td>R$ {isDiscountAvailable() ? <s>{product.shipping.toFixed(2)}</s> : product.shipping.toFixed(2)}</td>
                   <td>
-                    {product.id !== product.id && product.id ? (
-                      <LoadingIcon color="#333" size={14} />
+                    R${" "}
+                    {isDiscountAvailable() ? (
+                      <s>{product.shipping.toFixed(2)}</s>
                     ) : (
-                      <strong>
-                        {(product.amount * product.price).toFixed(2)}
-                      </strong>
+                      product.shipping.toFixed(2)
                     )}
+                  </td>
+                  <td>
+                    {
+                      <strong>
+                        R$ {(product.amount * product.price).toFixed(2)}
+                      </strong>
+                    }
                   </td>
                   <td>
                     <button
@@ -106,10 +110,17 @@ export function Cart() {
           <button type="button" disabled={!(cartItems.length > 0)}>
             FINALIZAR PEDIDO
           </button>
-          {cartItems.length > 0 ? <p>*Frete grátis para compras acima de R$250,00!</p> : null}
+          {cartItems.length > 0 ? (
+            <p>*Frete grátis para compras acima de R$250,00!</p>
+          ) : null}
           <Total>
             <span>Total:</span>
-            <strong>R$ {isDiscountAvailable() ? getTotalPriceWithDiscount() : getTotalPrice()}</strong>
+            <strong>
+              R${" "}
+              {isDiscountAvailable()
+                ? getTotalPriceWithDiscount()
+                : getTotalPrice()}
+            </strong>
           </Total>
         </footer>
       </Container>

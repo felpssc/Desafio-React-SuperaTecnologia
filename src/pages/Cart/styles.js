@@ -1,20 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import { darken } from 'polished';
-import { FaSpinner } from 'react-icons/fa';
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  } to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const LoadingIcon = styled(FaSpinner)`
-  animation: ${rotate} 2000ms infinite linear;
-  display: block;
-  margin: 0 auto;
-`;
+import styled from "styled-components";
+import { darken } from "polished";
 
 export const Container = styled.div`
   padding: 30px;
@@ -37,7 +22,7 @@ export const Container = styled.div`
       text-transform: uppercase;
       transition: background 0.2s;
       &:hover {
-        background: ${darken(0.05, '#7159c1')};
+        background: ${darken(0.05, "#7159c1")};
       }
       &:disabled {
         opacity: 0.7;
@@ -93,6 +78,7 @@ export const ProductTable = styled.table`
     border: 0;
     padding: 6px;
     cursor: pointer;
+    outline: none;
   }
 `;
 
