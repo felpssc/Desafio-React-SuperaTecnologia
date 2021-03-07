@@ -1,18 +1,5 @@
-import styled, { keyframes, css } from 'styled-components';
-import { FaSpinner } from 'react-icons/fa';
+import styled from 'styled-components';
 import { darken } from 'polished';
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  } to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const LoadingIcon = styled(FaSpinner)`
-  animation: ${rotate} 2000ms infinite linear;
-`;
 
 export const Container = styled.div`
   padding-top: 15vh;
@@ -69,21 +56,6 @@ export const ProductList = styled.ul`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   list-style: none;
-  ${props => {
-    let styles = '';
-    for (let i = 0; i < props.length; i += 1) {
-      styles += `
-        li:nth-child(${i + 1}) {
-          animation: product-card-appear 300ms;
-          animation-fill-mode: backwards;
-          animation-delay: ${i * 50}ms;
-        }
-      `;
-    }
-    return css`
-      ${styles}
-    `;
-  }}
   li {
     display: flex;
     flex-direction: column;
