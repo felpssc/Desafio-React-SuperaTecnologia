@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Header } from "../../components/Header";
-import products from "../../services/products.json";
 import {
   MdRemoveCircleOutline,
   MdAddCircleOutline,
