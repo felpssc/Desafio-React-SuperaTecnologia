@@ -40,7 +40,7 @@ export function Home() {
     <>
       <Header></Header>
       <OrderProducts>
-        <p>Ordernar produtos por: </p>
+        <p>Ordenar produtos por: </p>
         <button onClick={sortProductsByName}>Nome</button>
         <button onClick={sortProductsByPrice}>Preço</button>
         <button onClick={sortProductsByScore}>Popularidade</button>
